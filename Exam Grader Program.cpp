@@ -6,22 +6,32 @@
 
 int main()
 {
-    std::ifstream inFile("CorrectAnswers.txt");
+    std::ifstream File1("CorrectAnswers.txt");
+    std::ifstream File2("StudentAnswers.txt");
             
-    if (!inFile)
+    if (!File1 && !File2)
     {
         std::cerr << "Error Opening File!" << std::endl;
         return 1;
     }
 
     char correct[20];
+    char student[20];
     int x = 0;
+    int y = 0;
 
-    while (inFile >> correct[x])
+    while (File1 >> correct[x])
     {
         std::cout << correct[x] << std::endl;
         x++;
     }
+
+    while (File2 >> student[y])
+    {
+        std::cout << student[y] << std::endl;
+        y++;
+    }
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
