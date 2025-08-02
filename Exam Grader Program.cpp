@@ -9,7 +9,7 @@ using namespace std;
 
 const double MAX_SIZE = 20;
 
-void getAnswers(string filename1, string filename2, char correctarr[],  char studentarr[], int x)
+int getAnswers(string filename1, string filename2, char correctarr[],  char studentarr[], int x)
 {
     // Finds the names of the files to open
     std::ifstream File1(filename1);
@@ -19,6 +19,7 @@ void getAnswers(string filename1, string filename2, char correctarr[],  char stu
     if (!File1 && !File2)
     {
         std::cerr << "Error Opening File!" << std::endl;
+        return 0;
     }
 
     //Sets each value from the value into a spot in the array
